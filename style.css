@@ -6,9 +6,9 @@
     --accent: #2D5BE3;
     --accent2: #E8F0FF;
     --border: #E2DFD8;
-    --mono: 'DM Mono', monospace;
-    --serif: 'Instrument Serif', serif;
-    --sans: 'Geist', sans-serif;
+    --mono: 'SF Mono', SFMono-Regular, ui-monospace, monospace;
+    --serif: 'New York', Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --radius: 12px;
   }
 
