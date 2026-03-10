@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Rev: 2026.09.09 -->
+
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 <title>Néron AI — Assistant Local Intelligent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -15,7 +15,7 @@
 <!-- NAV -->
 
 <nav>
-  <a href="#" class="nav-logo">Néron (dev)<span>.</span></a>
+  <a href="#" class="nav-logo">Néron<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#features">Fonctionnalités</a></li>
     <li><a href="#install">Installation</a></li>
@@ -166,44 +166,6 @@
           <div><span class="t-comment"># Démarrage</span></div>
           <div><span class="t-prompt">$</span> <span class="t-cmd">make -C /etc/neron start</span></div>
           <div><span class="t-success">✔</span> <span class="t-cmd">Néron démarré</span></div>
-=======
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Néron HUD</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body class="state-idle">
-
-<div id="app">
-
-  <!-- HEADER -->
-
-  <header class="hud-header">
-    <div>
-      <h1 class="logo">NÉRON</h1>
-    </div>
-    <p class="tagline">SYSTÈME D'INTELLIGENCE ARTIFICIELLE — HUD v2.0</p>
-    <div class="header-right">
-      <span id="clock" class="clock">--:--:--</span>
-      <span id="headerScore">SCORE: --</span>
-    </div>
-  </header>
-
-  <!-- GRILLE PRINCIPALE -->
-
-  <div class="hud-grid">
-
-```
-<!-- ═══ COLONNE GAUCHE : SERVICES ═══ -->
-<div class="col-left">
-
-  <div class="hud-panel services-panel">
-    <div class="panel-title">▸ SERVICES ACTIFS</div>
-    <div class="services-list" id="servicesList">
-      <div class="service-item unknown">
-        <span class="service-name">Chargement...</span>
-        <div class="service-status">
-          <div class="status-dot"></div>
         </div>
       </div>
     </div>
@@ -383,114 +345,6 @@
   <p class="footer-copy">© 2026 Néron AI · v2.0.0 · MIT License</p>
 </footer>
 <script src="js/main.js"></script>
-=======
-
-  <div class="hud-panel score-panel">
-    <div class="panel-title">▸ SANTÉ SYSTÈME</div>
-    <div style="padding: 12px;">
-      <div class="score-display">
-        <div>
-          <div class="score-value" id="scoreValue">--</div>
-          <div class="score-label">SCORE / 100</div>
-        </div>
-        <div style="text-align:right; font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-dim);">
-          <div id="scoreStatus">--</div>
-          <div id="scoreUp" style="color: var(--success);">-- UP</div>
-          <div id="scoreDown" style="color: var(--danger);">-- DOWN</div>
-        </div>
-      </div>
-      <div class="score-bar">
-        <div class="score-bar-fill" id="scoreBar" style="width: 0%"></div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- ═══ COLONNE CENTRE : ORBE VOCALE ═══ -->
-<div class="col-center">
-
-  <!-- Données flottantes gauche -->
-  <div class="float-data left" id="floatLeft">
-    CORE: STABLE<br/>
-    LATENCY: --ms<br/>
-    MODE: VOCAL
-  </div>
-
-  <!-- Orbe principale -->
-  <div class="orb-section">
-    <button class="orb-wrapper" id="orbBtn" aria-label="Parler à Néron">
-      <!-- Anneaux Jarvis -->
-      <div class="orb-ring ring-outer"></div>
-      <div class="orb-ring ring-mid"></div>
-      <div class="orb-ring ring-inner"></div>
-      <!-- Noyau -->
-      <div class="orb-core">
-        <svg class="orb-icon" id="orbIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-          <line x1="12" y1="19" x2="12" y2="23"/>
-          <line x1="8" y1="23" x2="16" y2="23"/>
-        </svg>
-      </div>
-    </button>
-
-    <!-- Waveform -->
-    <div class="waveform" id="waveform" aria-hidden="true">
-      <div class="waveform-bars" id="waveformBars"></div>
-    </div>
-
-    <p class="status-label" id="statusLabel">APPUYER POUR PARLER</p>
-  </div>
-
-  <!-- Données flottantes droite -->
-  <div class="float-data right" id="floatRight">
-    MEMORY: ACTIVE<br/>
-    STT: WHISPER<br/>
-    LLM: OLLAMA
-  </div>
-
-</div>
-
-<!-- ═══ COLONNE DROITE : CHAT + ALERTES ═══ -->
-<div class="col-right">
-
-  <div class="hud-panel chat-panel">
-    <div class="panel-title">▸ INTERFACE CONVERSATION</div>
-    <div class="conversation" id="conversation" aria-live="polite">
-      <div class="message neron">
-        <span class="message-label">NÉRON</span>
-        <div class="message-bubble">
-          <p class="message-text">Système initialisé. Interface vocale et textuelle opérationnelle.</p>
-        </div>
-      </div>
-    </div>
-    <div class="chat-input-area">
-      <input
-        type="text"
-        class="chat-input"
-        id="chatInput"
-        placeholder="Message texte..."
-        autocomplete="off"
-      />
-      <button class="chat-send" id="chatSend">ENVOYER</button>
-    </div>
-  </div>
-
-  <div class="hud-panel anomalies-panel">
-    <div class="panel-title">▸ ANOMALIES DÉTECTÉES</div>
-    <div class="anomalies-list" id="anomaliesList">
-      <div class="no-anomaly">● AUCUNE ANOMALIE</div>
-    </div>
-  </div>
-
-</div>
-```
-
-  </div><!-- /hud-grid -->
-</div><!-- /app -->
-
-<script src="/js/app.js"></script>
 
 </body>
 </html>
