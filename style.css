@@ -93,6 +93,18 @@ nav {
   align-items: center;
 }
 
+/* Ensure nav-links stays visible on desktop even if .open class is missing */
+@media (min-width: 641px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    border-top: none;
+    padding: 0;
+  }
+  .nav-toggle { display: none !important; }
+}
+
 .nav-links a {
   font-size: 0.875rem;
   font-weight: 500;
