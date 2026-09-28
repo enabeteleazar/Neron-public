@@ -5,11 +5,10 @@
  * S'exécute en tant que script différé : le HTML est déjà analysé,
  * donc pas besoin d'attendre DOMContentLoaded.
  */
+import cfg from './config.js';
+
 (function () {
   'use strict';
-
-  const cfg = window.NERON_CONFIG;
-  if (!cfg) return;
 
   function el(tag, props, children) {
     const node = document.createElement(tag);

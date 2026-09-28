@@ -4,14 +4,15 @@
  * Anti-spam sans tiers : champ honeypot + délai minimal de soumission.
  * Aucune donnée n'est stockée côté navigateur (pas de localStorage, pas de cookie).
  */
+import cfg from './config.js';
+
 (function () {
   'use strict';
 
   const form = document.getElementById('waitlist-form');
   if (!form) return;
 
-  const cfg = window.NERON_CONFIG;
-  const endpoint = cfg && cfg.waitlist ? cfg.waitlist.endpoint : null;
+  const endpoint = cfg.waitlist.endpoint;
   const statusEl = document.getElementById('waitlist-status');
   const submitBtn = form.querySelector('button[type="submit"]');
   const loadedAt = Date.now();

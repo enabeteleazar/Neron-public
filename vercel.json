@@ -1,6 +1,9 @@
 {
   "version": 2,
   "trailingSlash": false,
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
   "headers": [
     {
       "source": "/(.*)",

@@ -4,3 +4,5 @@
 !.env.example
 *.pem
 *.key
+node_modules
+dist

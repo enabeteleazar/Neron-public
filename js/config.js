@@ -5,7 +5,7 @@
  * Les valeurs marquées [À CONFIRMER] sont des choix provisoires de l'agent :
  * ne pas les considérer comme validées par NABET.
  */
-window.NERON_CONFIG = Object.freeze({
+export default Object.freeze({
   site: {
     name: 'neronOS',
     // [À CONFIRMER] domaine définitif du site vitrine
