@@ -1168,6 +1168,8 @@ footer {
   padding: calc(var(--nav-h) + 3rem) 1.5rem 4rem;
 }
 
+.error-page .hero-actions { margin-top: 2rem; }
+
 .error-code {
   font-family: var(--serif);
   font-size: clamp(4rem, 12vw, 7rem);
