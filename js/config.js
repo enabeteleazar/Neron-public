@@ -72,8 +72,8 @@ window.NERON_CONFIG = Object.freeze({
         'à la société. Code source ouvert, licence MIT.',
       // [À CONFIRMER] rythme réel des mises à jour de cette génération
       maintenanceNote:
-        'Génération précédente de Néron : les mises à jour de Néron Community sont ' +
-        'moins fréquentes que celles des offres en ligne et Box. [À CONFIRMER]',
+        'Les mises à jour de cette version sont donc moins fréquentes que celles des ' +
+        'offres en ligne et Box. [À CONFIRMER]',
       page: 'community.html',
       ctaLabel: 'Installer Néron Community',
     },
