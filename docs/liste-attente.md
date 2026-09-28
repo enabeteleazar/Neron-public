@@ -63,7 +63,9 @@ ou les cookies.
 
 - Choisir et documenter l'endpoint réel, puis renseigner
   `NERON_CONFIG.waitlist.endpoint` dans `js/config.js`.
-- Mettre à jour `vercel.json` (`Content-Security-Policy`, directive
-  `form-action`) pour inclure le domaine de cet endpoint.
+- Mettre à jour `vercel.json` (`Content-Security-Policy`, directives
+  `form-action` **et** `connect-src`) pour inclure le domaine de cet
+  endpoint — sans cela, le navigateur bloquera à la fois la soumission
+  de secours sans JS et l'appel `fetch()` de `js/waitlist.js`.
 - Définir la politique de rétention et de désinscription des emails
   collectés, à refléter dans `confidentialite.html`.
