@@ -1119,6 +1119,12 @@ footer {
   margin-top: var(--nav-h);
 }
 
+.legal-page-hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 3rem 1rem;
+}
+
 .legal-content h2 {
   font-family: var(--serif);
   font-size: 1.4rem;
