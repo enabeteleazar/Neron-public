@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Néron Community : assistant IA 100% local et open source (licence MIT), installable en une commande. Génération précédente de Néron, en maintenance limitée.">
+  <meta name="theme-color" content="#F7F6F3">
+  <link rel="canonical" href="https://neronos.fr/community.html">
+  <meta property="og:title" content="Néron Community — neronOS">
+  <meta property="og:description" content="100% local, open source, installable en une commande. Aucune donnée n'est envoyée à la société.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neronos.fr/community.html">
+  <meta name="twitter:card" content="summary">
+  <title>Néron Community — neronOS</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="community.html">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header role="banner" id="site-header"></header>
+
+<main id="main">
+
+<div class="page-hero">
+  <span class="page-eyebrow">// néron community</span>
+  <span class="badge-status" data-status-for="community"></span>
+  <h1 class="page-title">100&nbsp;% local. Open source. Une commande.</h1>
+  <p class="page-lead">
+    Néron Community est la version gratuite et open source de Néron : elle tourne entièrement
+    sur votre machine, sous licence MIT. C'est la génération précédente de Néron — le
+    développement actif se poursuit ailleurs, les mises à jour de cette version sont donc
+    <span data-community-maintenance>limitées</span>.
+  </p>
+  <div class="hero-actions">
+    <a href="#install" class="btn-primary">Installer Néron Community</a>
+    <a href="#" class="btn-secondary" data-github-repo target="_blank" rel="noopener noreferrer">Voir le dépôt →</a>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features" aria-labelledby="features-title">
+  <div class="container">
+    <div class="features-header reveal">
+      <span class="section-label">// fonctionnalités</span>
+      <h2 class="section-title" id="features-title">Tout ce dont vous avez besoin,<br>rien de superflu.</h2>
+      <p class="section-desc">Une architecture modulaire pensée pour tourner sur du matériel humble, avec une expérience complète.</p>
+    </div>
+    <ul class="features-grid reveal" role="list">
+      <li class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🧠</div>
+        <h3 class="feature-title">LLM Local via Ollama</h3>
+        <p class="feature-desc">Llama, Mistral, Gemma — choisissez votre modèle. Aucune API externe, aucune latence réseau, zéro frais.</p>
+      </li>
+      <li class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🎙️</div>
+        <h3 class="feature-title">Speech-to-Text Whisper <span class="badge-soon">(à venir)</span></h3>
+        <p class="feature-desc">Transcription vocale locale avec Whisper (modèle open source, aucune donnée envoyée). Tourne entièrement sur votre machine.</p>
+      </li>
+      <li class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🔊</div>
+        <h3 class="feature-title">Text-to-Speech natif <span class="badge-soon">(à venir)</span></h3>
+        <p class="feature-desc">Réponses vocales avec eSpeak. Néron vous répond à voix haute, sans connexion internet.</p>
+      </li>
+      <li class="feature-card">
+        <div class="feature-icon" aria-hidden="true">💾</div>
+        <h3 class="feature-title">Mémoire persistante</h3>
+        <p class="feature-desc">SQLite embarqué. Néron se souvient de vos conversations, préférences et contexte au fil du temps.</p>
+      </li>
+      <li class="feature-card">
+        <div class="feature-icon" aria-hidden="true">📱</div>
+        <h3 class="feature-title">Interface Telegram</h3>
+        <p class="feature-desc">
+          Discutez avec Néron depuis votre téléphone via Telegram. L'IA, la mémoire et vos
+          données tournent chez vous&nbsp;; Telegram reste un service tiers, par lequel vos
+          messages transitent pour vous atteindre.
+        </p>
+      </li>
+      <li class="feature-card">
+        <div class="feature-icon" aria-hidden="true">⚙️</div>
+        <h3 class="feature-title">Service systemd</h3>
+        <p class="feature-desc">Démarre automatiquement au boot, redémarre en cas de crash. Gérez tout avec <code>make start/stop</code>.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section id="install" aria-labelledby="install-title">
+  <div class="container">
+    <div class="install-layout">
+      <div class="reveal">
+        <span class="section-label">// installation</span>
+        <h2 class="section-title" id="install-title">Prêt en une commande.</h2>
+        <p class="section-desc">
+          Un script bootstrap s'occupe de tout — dépendances, Ollama, modèle, service systemd.
+          Cette commande installe la version <strong>v2.0.0</strong> de Néron, celle que décrit
+          cette page.
+        </p>
+        <p class="section-desc mt-1">
+          <a href="#" data-github-install-script target="_blank" rel="noopener noreferrer">
+            Lire le script d'installation avant de l'exécuter →
+          </a>
+        </p>
+        <ol class="install-steps" aria-label="Étapes d'installation">
+          <li class="install-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-content">
+              <h3>Lancez le script d'installation</h3>
+              <p>curl télécharge et exécute install.sh automatiquement</p>
+            </div>
+          </li>
+          <li class="install-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-content">
+              <h3>Configurez votre .env</h3>
+              <p>Token Telegram (optionnel), modèle Ollama, préférences</p>
+            </div>
+          </li>
+          <li class="install-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-content">
+              <h3>Démarrez Néron</h3>
+              <p>make start — Néron tourne en arrière-plan, prêt à répondre</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="terminal reveal" role="region" aria-label="Exemple d'installation en terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="terminal-title">bash</span>
+        </div>
+        <pre class="terminal-body"><code><span class="t-comment"># Installation one-liner (tag v2.0.0)</span>
+<span class="t-prompt">$</span> <span class="t-cmd">curl -fsSL https://raw.githubusercontent.com/enabeteleazar/Neron_AI/v2.0.0/install.sh | bash</span>
+
+<span class="t-success">✔</span> <span class="t-cmd">RAM : 3816MB OK</span>
+<span class="t-success">✔</span> <span class="t-cmd">Dépendances OK</span>
+<span class="t-success">✔</span> <span class="t-cmd">Ollama installé</span>
+<span class="t-success">✔</span> <span class="t-cmd">Dépôt cloné → /etc/neron</span>
+<span class="t-success">✔</span> <span class="t-cmd">Venv Python OK</span>
+<span class="t-success">✔</span> <span class="t-cmd">Service systemd activé</span>
+<span class="t-info">📥</span> <span class="t-cmd">Téléchargement llama3.2:3b...</span>
+<span class="t-success">✔</span> <span class="t-cmd">Modèle prêt</span>
+
+<span class="t-success">✅ Installation terminée !</span>
+
+<span class="t-comment"># Démarrage</span>
+<span class="t-prompt">$</span> <span class="t-cmd">make -C /etc/neron start</span>
+<span class="t-success">✔</span> <span class="t-cmd">Néron démarré</span></code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture" aria-labelledby="arch-title">
+  <div class="container">
+    <div class="arch-layout">
+      <div class="reveal">
+        <span class="section-label">// architecture</span>
+        <h2 class="section-title" id="arch-title">Un seul processus.<br>Plusieurs agents.</h2>
+        <p class="section-desc">Cette version de Néron tourne comme un seul processus Python léger. Chaque fonctionnalité est un agent indépendant.</p>
+        <ul class="arch-features-list" role="list">
+          <li class="arch-feature">
+            <div class="arch-feature-dot" aria-hidden="true"></div>
+            <p><strong>FastAPI Core</strong> — Orchestrateur central exposé sur :8000. Point d'entrée unique.</p>
+          </li>
+          <li class="arch-feature">
+            <div class="arch-feature-dot" aria-hidden="true"></div>
+            <p><strong>Agents modulaires</strong> — LLM, STT, TTS, Mémoire, Telegram s'activent selon la config.</p>
+          </li>
+          <li class="arch-feature">
+            <div class="arch-feature-dot" aria-hidden="true"></div>
+            <p><strong>Ollama natif</strong> — Communication directe HTTP avec Ollama local. Aucun intermédiaire.</p>
+          </li>
+          <li class="arch-feature">
+            <div class="arch-feature-dot" aria-hidden="true"></div>
+            <p><strong>SQLite embarqué</strong> — Base de données locale, zéro dépendance externe.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="arch-diagram reveal" role="img" aria-label="Diagramme d'architecture de Néron">
+        <div class="arch-row">
+          <span class="arch-icon" aria-hidden="true">🌐</span>
+          <span class="arch-name">Telegram Bot</span>
+          <span class="arch-port">polling</span>
+        </div>
+        <div class="arch-arrow" aria-hidden="true">↓ messages</div>
+        <div class="arch-row arch-row--accent">
+          <span class="arch-icon" aria-hidden="true">⚡</span>
+          <span class="arch-name arch-name--accent">Néron Core (FastAPI)</span>
+          <span class="arch-port">:8000</span>
+        </div>
+        <div class="arch-arrows-split" aria-hidden="true">
+          <div class="arch-arrow">↙ STT</div>
+          <div class="arch-arrow">↘ TTS</div>
+        </div>
+        <div class="arch-row-split">
+          <div class="arch-row arch-row--small">
+            <span class="arch-icon" aria-hidden="true">🎙️</span>
+            <span class="arch-name">Whisper</span>
+          </div>
+          <div class="arch-row arch-row--small">
+            <span class="arch-icon" aria-hidden="true">🔊</span>
+            <span class="arch-name">eSpeak</span>
+          </div>
+        </div>
+        <div class="arch-arrow" aria-hidden="true">↓ prompt</div>
+        <div class="arch-row">
+          <span class="arch-icon" aria-hidden="true">🦙</span>
+          <span class="arch-name">Ollama</span>
+          <span class="arch-port">:11434</span>
+        </div>
+        <div class="arch-arrow" aria-hidden="true">↓ store</div>
+        <div class="arch-row">
+          <span class="arch-icon" aria-hidden="true">💾</span>
+          <span class="arch-name">SQLite Memory</span>
+          <span class="arch-port">local</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo" aria-labelledby="demo-title">
+  <div class="container">
+    <div class="demo-layout">
+      <div class="demo-window reveal" role="region" aria-label="Démo de l'interface Telegram de Néron">
+        <div class="demo-topbar" aria-hidden="true">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="demo-topbar-title">Néron — Telegram</span>
+        </div>
+        <div class="demo-chat" role="log" aria-label="Conversation de démonstration">
+          <div class="msg msg-user">
+            <div class="msg-avatar" aria-hidden="true">E</div>
+            <div class="msg-bubble">Bonjour Néron, quelle heure est-il ?</div>
+          </div>
+          <div class="msg msg-neron">
+            <div class="msg-avatar" aria-hidden="true">N</div>
+            <div>
+              <div class="msg-neron-name" aria-hidden="true">Néron</div>
+              <div class="msg-bubble">Il est 14h32. Puis-je vous aider avec autre chose ?</div>
+            </div>
+          </div>
+          <div class="msg msg-user">
+            <div class="msg-avatar" aria-hidden="true">E</div>
+            <div class="msg-bubble">Rappelle-moi ce qu'on a discuté hier</div>
+          </div>
+          <div class="msg msg-neron">
+            <div class="msg-avatar" aria-hidden="true">N</div>
+            <div>
+              <div class="msg-neron-name" aria-hidden="true">Néron</div>
+              <div class="msg-bubble">Hier vous avez demandé une recette de quiche lorraine et nous avons discuté de votre projet domotique.</div>
+            </div>
+          </div>
+          <div class="msg msg-user">
+            <div class="msg-avatar" aria-hidden="true">E</div>
+            <div class="msg-bubble">/status</div>
+          </div>
+          <div class="msg msg-neron">
+            <div class="msg-avatar" aria-hidden="true">N</div>
+            <div>
+              <div class="msg-neron-name" aria-hidden="true">Néron</div>
+              <div class="msg-bubble">🖥 CPU : 12% · 💾 RAM : 34% · 🦙 Ollama : actif · ✅ Tout fonctionne</div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-input" aria-hidden="true">
+          <div class="demo-input-field">Écrivez un message...</div>
+          <div class="demo-send">→</div>
+        </div>
+      </div>
+      <div class="demo-features reveal">
+        <span class="section-label">// démo</span>
+        <h2 class="section-title" id="demo-title">Parlez-lui.<br>Il se souvient.</h2>
+        <ul class="demo-features-list" role="list">
+          <li class="demo-feature">
+            <span class="demo-feature-icon" aria-hidden="true">💬</span>
+            <div>
+              <h3>Conversations naturelles</h3>
+              <p>Posez des questions, donnez des instructions. Néron comprend le contexte et répond naturellement.</p>
+            </div>
+          </li>
+          <li class="demo-feature">
+            <span class="demo-feature-icon" aria-hidden="true">🧩</span>
+            <div>
+              <h3>Mémoire longue durée</h3>
+              <p>Néron se souvient de vos échanges passés. Le contexte persiste entre les sessions.</p>
+            </div>
+          </li>
+          <li class="demo-feature">
+            <span class="demo-feature-icon" aria-hidden="true">📊</span>
+            <div>
+              <h3>Monitoring intégré</h3>
+              <p>Commande /status pour voir l'état du système en temps réel depuis Telegram.</p>
+            </div>
+          </li>
+          <li class="demo-feature">
+            <span class="demo-feature-icon" aria-hidden="true">🔒</span>
+            <div>
+              <h3>Local par défaut</h3>
+              <p>
+                L'IA, la mémoire et vos données tournent chez vous. Les services que vous
+                choisissez de connecter (Telegram, agenda, mail) restent des services tiers.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCE -->
+<section id="source" aria-labelledby="source-title">
+  <div class="container legal-content">
+    <span class="section-label">// code source</span>
+    <h2 class="section-title" id="source-title">Un projet qui continue d'évoluer.</h2>
+    <p>
+      Le dépôt public <code>enabeteleazar/Neron_AI</code> a beaucoup évolué depuis cette
+      version&nbsp;: son développement actif se poursuit avec une architecture différente.
+      Néron Community installe précisément le tag <code>v2.0.0</code> de ce dépôt — figé, pour
+      rester prévisible.
+    </p>
+    <ul>
+      <li><a href="#" data-github-community-tag target="_blank" rel="noopener noreferrer">Parcourir le code de la version v2.0.0 →</a></li>
+      <li><a href="#" data-github-repo target="_blank" rel="noopener noreferrer">Voir le dépôt et son développement actuel →</a></li>
+    </ul>
+    <p><span class="placeholder">[À CONFIRMER : rythme de maintenance et de correctifs de sécurité pour Néron Community]</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo" id="site-footer"></footer>
+
+<script src="js/config.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

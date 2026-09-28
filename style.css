@@ -58,6 +58,23 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 3px;
 }
 
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 200;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus { top: 1rem; }
+
 /* ── HEADER / NAV ── */
 header {
   position: fixed;
@@ -289,6 +306,12 @@ h1 em {
 
 .btn-secondary:hover { background: var(--bg2); border-color: #ccc; }
 
+.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .hero-stats {
   display: flex;
   gap: 3rem;
@@ -352,6 +375,8 @@ section { padding: 6rem 3rem; }
 }
 
 .container { max-width: 1100px; margin: 0 auto; }
+
+.mt-1 { margin-top: 1rem; }
 
 /* ── FEATURES ── */
 #features { background: var(--bg2); }
@@ -869,6 +894,10 @@ footer {
   margin-bottom: 1rem;
 }
 
+.page-hero .badge-status { margin-bottom: 1.25rem; }
+
+.page-hero .hero-actions { justify-content: flex-start; margin-top: 2rem; }
+
 .page-lead {
   font-size: 1.05rem;
   color: var(--ink2);
@@ -1013,6 +1042,8 @@ footer {
   outline-offset: 1px;
   border-color: var(--accent);
 }
+
+.form-fieldset { border: none; padding: 0; margin: 0; }
 
 .form-radio-group {
   display: flex;

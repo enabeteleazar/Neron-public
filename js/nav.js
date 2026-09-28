@@ -127,6 +127,66 @@
     mount.appendChild(copy);
   }
 
+  function applyProductBindings() {
+    // Permet de changer un statut ("bientôt" → "disponible") en un seul
+    // endroit (js/config.js) sans toucher au HTML de chaque page.
+    document.querySelectorAll('[data-status-for]').forEach((node) => {
+      const product = cfg.products[node.getAttribute('data-status-for')];
+      if (!product) return;
+      node.textContent = product.statusLabel;
+      node.className = 'badge-status badge-status--' + product.status;
+    });
+
+    document.querySelectorAll('[data-product-name-for]').forEach((node) => {
+      const product = cfg.products[node.getAttribute('data-product-name-for')];
+      if (product) node.textContent = product.name;
+    });
+
+    document.querySelectorAll('[data-app-login]').forEach((node) => {
+      node.setAttribute('href', cfg.app.domain + cfg.app.loginPath);
+    });
+
+    document.querySelectorAll('[data-app-signup]').forEach((node) => {
+      node.setAttribute('href', cfg.app.domain + cfg.app.signupPath);
+    });
+
+    document.querySelectorAll('[data-github-repo]').forEach((node) => {
+      node.setAttribute('href', cfg.github.repoUrl);
+    });
+
+    document.querySelectorAll('[data-github-install-script]').forEach((node) => {
+      node.setAttribute('href', cfg.github.installScriptUrl);
+    });
+
+    document.querySelectorAll('[data-github-community-tag]').forEach((node) => {
+      node.setAttribute('href', cfg.github.communityTagUrl);
+    });
+
+    document.querySelectorAll('[data-install-command]').forEach((node) => {
+      node.textContent = cfg.github.installCommand;
+    });
+
+    document.querySelectorAll('[data-community-maintenance]').forEach((node) => {
+      node.textContent = cfg.products.community.maintenanceNote;
+    });
+
+    document.querySelectorAll('[data-online-primary-cta]').forEach((node) => {
+      const product = cfg.products.online;
+      if (product.status === 'disponible') {
+        node.setAttribute('href', cfg.app.domain + cfg.app.signupPath);
+        node.textContent = 'Créer un compte';
+        node.removeAttribute('aria-disabled');
+        node.classList.remove('is-disabled');
+      } else {
+        node.textContent = product.statusLabel;
+        node.setAttribute('aria-disabled', 'true');
+        node.removeAttribute('href');
+        node.classList.add('is-disabled');
+      }
+    });
+  }
+
   renderHeader();
   renderFooter();
+  applyProductBindings();
 })();

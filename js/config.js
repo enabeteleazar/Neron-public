@@ -21,10 +21,17 @@ window.NERON_CONFIG = Object.freeze({
   },
 
   github: {
+    // Le dépôt a beaucoup évolué depuis la v2.0.0 (architecture à sous-modules,
+    // multi-services — voir CHANGELOG). « master » et « main » n'ont plus de
+    // install.sh à la racine : on pointe volontairement sur le tag v2.0.0,
+    // qui correspond à ce que décrit Néron Community. Vérifié le 2026-09-28
+    // (clone + fetch --tags + raw.githubusercontent.com → 200).
     repoUrl: 'https://github.com/enabeteleazar/Neron_AI',
-    installScriptUrl: 'https://github.com/enabeteleazar/Neron_AI/blob/master/install.sh',
+    communityTag: 'v2.0.0',
+    communityTagUrl: 'https://github.com/enabeteleazar/Neron_AI/tree/v2.0.0',
+    installScriptUrl: 'https://github.com/enabeteleazar/Neron_AI/blob/v2.0.0/install.sh',
     installCommand:
-      'curl -fsSL https://raw.githubusercontent.com/enabeteleazar/Neron_AI/master/install.sh | bash',
+      'curl -fsSL https://raw.githubusercontent.com/enabeteleazar/Neron_AI/v2.0.0/install.sh | bash',
   },
 
   // Contrat attendu par le formulaire de liste d'attente — voir docs/liste-attente.md.
