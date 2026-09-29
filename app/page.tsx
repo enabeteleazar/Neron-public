@@ -1,8 +1,96 @@
 import GlassControl from '@/components/GlassControl';
+import OfferCarousel, { type CarouselSlide } from '@/components/OfferCarousel';
 import StatusBadge from '@/components/StatusBadge';
 import { products, loginUrl } from '@/lib/config';
 
 const connections = ['Agenda', 'Rappels', 'Mail', 'Notes', 'Telegram', 'Notion'];
+
+const offerSlides: CarouselSlide[] = [
+  {
+    id: products.community.id,
+    label: products.community.name,
+    glowClass: products.community.glowClass,
+    content: (
+      <div className="panel-wrap">
+        <article className="panel glass">
+          <div className="panel-text">
+            <h3>{products.community.name}</h3>
+            <p className="tagline">{products.community.tagline}</p>
+            <p className="body">
+              Installez Néron sur votre machine : tout tourne chez vous,
+              aucune donnée n&apos;est envoyée à la société.
+            </p>
+            <StatusBadge status={products.community.status} label={products.community.statusLabel} />
+            <a href={products.community.page} className="btn btn-glass glass">
+              Découvrir Community
+            </a>
+          </div>
+          <ul className="facts">
+            <li>Gratuit</li>
+            <li>100 % local</li>
+            <li>Installable en une commande</li>
+          </ul>
+        </article>
+      </div>
+    ),
+  },
+  {
+    id: products.online.id,
+    label: products.online.name,
+    glowClass: products.online.glowClass,
+    content: (
+      <div className="panel-wrap">
+        <article className="panel glass">
+          <div className="panel-text">
+            <h3>{products.online.name}</h3>
+            <p className="tagline">{products.online.tagline}</p>
+            <p className="body">
+              Connectez-vous depuis votre navigateur et retrouvez votre
+              assistant sur son tableau de bord.
+            </p>
+            <StatusBadge status={products.online.status} label={products.online.statusLabel} />
+            <a href={products.online.page} className="btn btn-glass glass">
+              Découvrir l&apos;offre en ligne
+            </a>
+          </div>
+          <ul className="facts">
+            <li>Connexion Apple, Google ou code email</li>
+            <li>Rien à installer</li>
+            <li>Données hébergées par la société</li>
+          </ul>
+        </article>
+      </div>
+    ),
+  },
+  {
+    id: products.box.id,
+    label: products.box.name,
+    glowClass: products.box.glowClass,
+    content: (
+      <div className="panel-wrap">
+        <article className="panel glass">
+          <div className="panel-text">
+            <h3>{products.box.name}</h3>
+            <p className="tagline">{products.box.tagline}</p>
+            <p className="body">
+              Branchez-le sur votre réseau : Néron tourne à la maison,
+              comme Community, dans un boîtier prêt à l&apos;emploi.
+            </p>
+            <StatusBadge status={products.box.status} label={products.box.statusLabel} />
+            <a href={products.box.page} className="btn btn-glass glass">
+              Rejoindre la liste d&apos;attente
+            </a>
+          </div>
+          <ul className="facts">
+            <li>Particuliers et professionnels</li>
+            <li>100 % local</li>
+            <li>Aucune vente ouverte pour l&apos;instant</li>
+          </ul>
+        </article>
+      </div>
+    ),
+  },
+];
 
 export default function Home() {
   return (
@@ -55,80 +143,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="panels">
-            <div className={`panel-wrap ${products.community.glowClass}`}>
-              <article className="panel glass">
-                <div className="panel-text">
-                  <h3>{products.community.name}</h3>
-                  <p className="tagline">{products.community.tagline}</p>
-                  <p className="body">
-                    Installez Néron sur votre machine : tout tourne chez
-                    vous, aucune donnée n&apos;est envoyée à la société.
-                  </p>
-                  <StatusBadge
-                    status={products.community.status}
-                    label={products.community.statusLabel}
-                  />
-                  <a href={products.community.page} className="btn btn-glass glass">
-                    Découvrir Community
-                  </a>
-                </div>
-                <ul className="facts">
-                  <li>Gratuit</li>
-                  <li>100 % local</li>
-                  <li>Installable en une commande</li>
-                </ul>
-              </article>
-            </div>
-
-            <div className={`panel-wrap ${products.online.glowClass}`}>
-              <article className="panel glass">
-                <div className="panel-text">
-                  <h3>{products.online.name}</h3>
-                  <p className="tagline">{products.online.tagline}</p>
-                  <p className="body">
-                    Connectez-vous depuis votre navigateur et retrouvez
-                    votre assistant sur son tableau de bord.
-                  </p>
-                  <StatusBadge
-                    status={products.online.status}
-                    label={products.online.statusLabel}
-                  />
-                  <a href={products.online.page} className="btn btn-glass glass">
-                    Découvrir l&apos;offre en ligne
-                  </a>
-                </div>
-                <ul className="facts">
-                  <li>Connexion Apple, Google ou code email</li>
-                  <li>Rien à installer</li>
-                  <li>Données hébergées par la société</li>
-                </ul>
-              </article>
-            </div>
-
-            <div className={`panel-wrap ${products.box.glowClass}`}>
-              <article className="panel glass">
-                <div className="panel-text">
-                  <h3>{products.box.name}</h3>
-                  <p className="tagline">{products.box.tagline}</p>
-                  <p className="body">
-                    Branchez-le sur votre réseau : Néron tourne à la
-                    maison, comme Community, dans un boîtier prêt à
-                    l&apos;emploi.
-                  </p>
-                  <StatusBadge status={products.box.status} label={products.box.statusLabel} />
-                  <a href={products.box.page} className="btn btn-glass glass">
-                    Rejoindre la liste d&apos;attente
-                  </a>
-                </div>
-                <ul className="facts">
-                  <li>Particuliers et professionnels</li>
-                  <li>100 % local</li>
-                  <li>Aucune vente ouverte pour l&apos;instant</li>
-                </ul>
-              </article>
-            </div>
-          </div>
+          <OfferCarousel slides={offerSlides} />
         </div>
       </section>
 
