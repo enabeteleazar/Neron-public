@@ -7,19 +7,19 @@
   ],
 
   "entreprise": {
-    "denomination_sociale": null,
+    "denomination_sociale": "Neron Dynamics",
     "forme_juridique": "SASU",
-    "capital_social": null,
-    "siege_social": null,
-    "siren_rcs": null,
-    "directeur_publication": null,
-    "contact_general": null
+    "capital_social": "10 000€",
+    "siege_social": "444 Alaska Avenue, 90503 Torrance, États-Unis",
+    "siren_rcs": "803 715 077",
+    "directeur_publication": "NABET Eleazar Dan",
+    "contact_general": "eleazar.nabet@outlook.com"
   },
 
   "hebergement_site": {
-    "nom": null,
-    "adresse": null,
-    "contact": null
+    "nom": "Vercel Inc",
+    "adresse": "440 N Barranca Ave 4133, Covina, CA 91723, États-Unis",
+    "contact": "privacy@vercel.com / https://vercel.com/contact"
   },
 
   "domaines": {
