@@ -1,0 +1,131 @@
+{
+  "_lisez_moi": [
+    "Fichier UNIQUE regroupant toutes les infos à compléter sur le site. Modifiez les valeurs (mettez du texte à la place de null), puis committez/poussez sur GitHub — Vercel reconstruit le site automatiquement et vos valeurs remplacent les [À CONFIRMER]/[À COMPLÉTER] sur les pages concernées.",
+    "Laissez null ce que vous ne savez pas encore : le site continue d'afficher le placeholder [À CONFIRMER]/[À COMPLÉTER] à cet endroit, sans rien casser.",
+    "Ne touchez pas aux noms de champs (à gauche des ':'), seulement aux valeurs (à droite). Chaque champ a une description dans le bloc \"_guide\" en bas du fichier.",
+    "Pour tester en local avant de pousser : pnpm build puis pnpm preview."
+  ],
+
+  "entreprise": {
+    "denomination_sociale": null,
+    "forme_juridique": "SASU",
+    "capital_social": null,
+    "siege_social": null,
+    "siren_rcs": null,
+    "directeur_publication": null,
+    "contact_general": null
+  },
+
+  "hebergement_site": {
+    "nom": null,
+    "adresse": null,
+    "contact": null
+  },
+
+  "domaines": {
+    "site_vitrine": null,
+    "app": null,
+    "chemin_inscription": null
+  },
+
+  "neron_en_ligne": {
+    "statut": null,
+    "statut_description_cgu": null,
+    "hebergement_donnees": null,
+    "fournisseur_llm": null,
+    "service_envoi_emails": null,
+    "transferts_hors_ue": null,
+    "donnees_connexion_collectees": null,
+    "autres_donnees_compte": null,
+    "autres_finalites": null,
+    "autres_sous_traitants": null,
+    "duree_conservation_compte": null,
+    "disponibilite_creation_compte": null,
+    "disponibilite_conversation": null,
+    "autres_fonctionnalites_a_venir": null,
+    "usages_interdits_specifiques": null,
+    "clauses_responsabilite_garantie": null,
+    "juridiction_competente": null
+  },
+
+  "neron_community": {
+    "rythme_maintenance": null
+  },
+
+  "neron_box": {
+    "caracteristiques_materielles": null,
+    "prix_indicatif": null,
+    "date_ouverture_ventes": null,
+    "adresse_contact_secours": null
+  },
+
+  "liste_attente": {
+    "endpoint": null,
+    "prestataire": null,
+    "duree_conservation": null
+  },
+
+  "confidentialite": {
+    "contact_rgpd": null,
+    "contact_section9": null
+  },
+
+  "_guide": {
+    "entreprise": {
+      "denomination_sociale": "Nom de la société. Apparaît dans mentions-legales.html et confidentialite.html.",
+      "forme_juridique": "Déjà renseigné à SASU — changez si besoin.",
+      "capital_social": "Ex. \"10 000 €\". mentions-legales.html.",
+      "siege_social": "Adresse du siège social. mentions-legales.html et confidentialite.html.",
+      "siren_rcs": "Numéro SIREN / mention RCS. mentions-legales.html et confidentialite.html.",
+      "directeur_publication": "Nom de la personne responsable de la publication. mentions-legales.html.",
+      "contact_general": "Email ou adresse de contact général, utilisé à plusieurs endroits de mentions-legales.html."
+    },
+    "hebergement_site": {
+      "nom": "Hébergeur du site vitrine lui-même (probablement Vercel). mentions-legales.html.",
+      "adresse": "Adresse de cet hébergeur. mentions-legales.html.",
+      "contact": "Contact de cet hébergeur. mentions-legales.html."
+    },
+    "domaines": {
+      "site_vitrine": "Domaine définitif du site vitrine, ex. \"https://neronos.fr\". Pilote les liens canoniques et og:url (nécessite de reconstruire le site).",
+      "app": "Domaine définitif de l'application en ligne, ex. \"https://app.neronos.fr\". Pilote le bouton \"Se connecter\" partout sur le site.",
+      "chemin_inscription": "Chemin de la page d'inscription sur l'app, ex. \"/signup\"."
+    },
+    "neron_en_ligne": {
+      "statut": "'disponible' ou 'bientot' — pilote automatiquement le badge de statut ET le bouton d'inscription sur tout le site. Ne mettez rien d'autre que ces deux valeurs exactes.",
+      "statut_description_cgu": "Phrase libre décrivant le statut pour les CGU, ex. \"disponible en accès anticipé\". cgu.html.",
+      "hebergement_donnees": "Pays et prestataire d'hébergement des données de Néron en ligne. en-ligne.html et confidentialite.html.",
+      "fournisseur_llm": "Fournisseur du modèle de langage utilisé côté serveur. en-ligne.html et confidentialite.html.",
+      "service_envoi_emails": "Prestataire d'envoi d'emails (codes de connexion, notifications). en-ligne.html et confidentialite.html.",
+      "transferts_hors_ue": "Existence et détail des transferts de données hors UE. en-ligne.html et confidentialite.html.",
+      "donnees_connexion_collectees": "Ex. horodatage, adresse IP. confidentialite.html.",
+      "autres_donnees_compte": "Autres données de compte collectées, au-delà de l'email et du contenu des conversations. confidentialite.html.",
+      "autres_finalites": "Autres finalités de traitement au-delà de celles déjà listées. confidentialite.html.",
+      "autres_sous_traitants": "Autres sous-traitants au-delà du LLM/hébergeur/email. confidentialite.html.",
+      "duree_conservation_compte": "Durée de conservation des données d'un compte Néron en ligne. confidentialite.html.",
+      "disponibilite_creation_compte": "Confirmer si la création de compte + connexion Apple/Google/email est réellement disponible aujourd'hui. en-ligne.html.",
+      "disponibilite_conversation": "Confirmer si la conversation avec l'assistant est réellement disponible aujourd'hui. en-ligne.html.",
+      "autres_fonctionnalites_a_venir": "Fonctionnalités prévues au-delà de l'export et la suppression de compte déjà mentionnés. en-ligne.html.",
+      "usages_interdits_specifiques": "Usages interdits propres au service, en plus de la liste générique déjà présente. cgu.html.",
+      "clauses_responsabilite_garantie": "Clauses de responsabilité et de garantie propres à la société. cgu.html.",
+      "juridiction_competente": "Juridiction compétente en cas de litige. cgu.html."
+    },
+    "neron_community": {
+      "rythme_maintenance": "Rythme réel des mises à jour / correctifs de sécurité de la version v2.0 figée. community.html."
+    },
+    "neron_box": {
+      "caracteristiques_materielles": "Caractéristiques matérielles connues de la Box. box.html.",
+      "prix_indicatif": "Laissez null tant qu'aucun prix n'est fixé — rien ne s'affiche sans cette valeur. box.html.",
+      "date_ouverture_ventes": "Date prévue d'ouverture des ventes. box.html.",
+      "adresse_contact_secours": "Adresse de contact si le formulaire de liste d'attente est indisponible (mode sans JavaScript). box.html."
+    },
+    "liste_attente": {
+      "endpoint": "URL technique de l'API qui reçoit les inscriptions — voir docs/liste-attente.md pour le contrat attendu. Nécessite aussi de mettre à jour vercel.json (form-action, connect-src).",
+      "prestataire": "Nom lisible du prestataire qui héberge/traite ces emails (pour la page confidentialité — pas l'URL technique). confidentialite.html.",
+      "duree_conservation": "Durée de conservation des emails de la liste d'attente. confidentialite.html."
+    },
+    "confidentialite": {
+      "contact_rgpd": "Adresse dédiée à l'exercice des droits RGPD (accès, effacement...). confidentialite.html.",
+      "contact_section9": "Contact général de la section 9 de la politique de confidentialité. confidentialite.html."
+    }
+  }
+}

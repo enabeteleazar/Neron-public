@@ -169,6 +169,22 @@ import cfg from './config.js';
       node.textContent = cfg.products.community.maintenanceNote;
     });
 
+    // Binder générique : lit site-data.json (via cfg.info) et remplace le
+    // texte d'un [data-field="chemin.vers.champ"] par la vraie valeur dès
+    // qu'elle est renseignée. Si le champ vaut encore null, on laisse le
+    // texte placeholder existant ([À CONFIRMER]/[À COMPLÉTER]) tel quel.
+    document.querySelectorAll('[data-field]').forEach((node) => {
+      const path = node.getAttribute('data-field').split('.');
+      let value = cfg.info;
+      for (const key of path) {
+        value = value && typeof value === 'object' ? value[key] : undefined;
+      }
+      if (typeof value === 'string' && value.trim() !== '') {
+        node.textContent = value;
+        node.classList.remove('placeholder');
+      }
+    });
+
     document.querySelectorAll('[data-online-primary-cta]').forEach((node) => {
       const product = cfg.products.online;
       if (product.status === 'disponible') {

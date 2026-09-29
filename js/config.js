@@ -1,23 +1,38 @@
 /**
  * Configuration centralisée du site vitrine neronOS.
- * Toute donnée qui varie dans le temps (noms, statuts, domaines, liens,
- * textes de badge) doit être lue ici — jamais recopiée en dur dans une page.
- * Les valeurs marquées [À CONFIRMER] sont des choix provisoires de l'agent :
- * ne pas les considérer comme validées par NABET.
+ *
+ * Les informations qui manquent encore (juridique, hébergement, statuts...)
+ * vivent dans site-data.json, à la racine du dépôt — c'est LE fichier à
+ * éditer pour compléter le site. Ce module l'importe, comble les valeurs
+ * manquantes avec des valeurs par défaut sûres, et expose le tout (y
+ * compris les champs bruts de site-data.json sous `info`, utilisés par le
+ * binder générique [data-field] de js/nav.js).
  */
+import siteData from '../site-data.json';
+
+const info = siteData;
+
+const onlineStatus =
+  info.neron_en_ligne.statut === 'disponible' ? 'disponible' : 'bientot';
+
+const onlineStatusLabel =
+  onlineStatus === 'disponible' ? 'Disponible' : 'Bientôt disponible';
+
+const communityMaintenanceNote =
+  info.neron_community.rythme_maintenance ||
+  'Les mises à jour de cette version sont donc moins fréquentes que celles des ' +
+    'offres en ligne et Box. [À CONFIRMER]';
+
 export default Object.freeze({
   site: {
     name: 'neronOS',
-    // [À CONFIRMER] domaine définitif du site vitrine
-    domain: 'https://neronos.fr',
+    domain: info.domaines.site_vitrine || 'https://neronos.fr',
   },
 
   app: {
-    // [À CONFIRMER] domaine définitif de l'application en ligne
-    domain: 'https://app.neronos.fr',
+    domain: info.domaines.app || 'https://app.neronos.fr',
     loginPath: '/login',
-    // [À CONFIRMER] chemin d'inscription — supposé « /signup » en l'absence de confirmation
-    signupPath: '/signup',
+    signupPath: info.domaines.chemin_inscription || '/signup',
   },
 
   github: {
@@ -38,19 +53,17 @@ export default Object.freeze({
   // Tant que l'endpoint n'existe pas, le formulaire passe en mode dégradé
   // (message d'erreur clair, aucun envoi silencieux).
   waitlist: {
-    // [À CONFIRMER] endpoint réel de collecte de la liste d'attente
-    endpoint: null,
+    endpoint: info.liste_attente.endpoint || null,
   },
 
   products: {
     online: {
       id: 'online',
-      name: 'Néron en ligne', // [À CONFIRMER] nom définitif
+      name: 'Néron en ligne',
       shortLabel: 'En ligne',
-      // [À CONFIRMER] statut réel : cette valeur suppose que le service n'est pas encore ouvert.
-      // Valeurs possibles : 'disponible' | 'bientot'
-      status: 'bientot',
-      statusLabel: 'Bientôt disponible',
+      // Piloté par site-data.json (neron_en_ligne.statut) : 'disponible' | 'bientot'
+      status: onlineStatus,
+      statusLabel: onlineStatusLabel,
       tagline: 'Un compte, un assistant prêt à l’emploi.',
       description:
         'Créez un compte et connectez-vous avec Apple, Google ou un code reçu par email. ' +
@@ -70,10 +83,7 @@ export default Object.freeze({
       description:
         'L’assistant tourne entièrement sur votre machine. Aucune donnée n’est envoyée ' +
         'à la société. Code source ouvert, licence MIT.',
-      // [À CONFIRMER] rythme réel des mises à jour de cette génération
-      maintenanceNote:
-        'Les mises à jour de cette version sont donc moins fréquentes que celles des ' +
-        'offres en ligne et Box. [À CONFIRMER]',
+      maintenanceNote: communityMaintenanceNote,
       page: 'community.html',
       ctaLabel: 'Installer Néron Community',
     },
@@ -103,4 +113,9 @@ export default Object.freeze({
     { label: 'Confidentialité', href: 'confidentialite.html' },
     { label: 'CGU', href: 'cgu.html' },
   ],
+
+  // Champs bruts de site-data.json, pour le binder générique [data-field]
+  // (voir js/nav.js). Chemin d'accès = chemin JSON, ex.
+  // data-field="entreprise.denomination_sociale".
+  info,
 });
