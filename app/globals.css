@@ -752,6 +752,102 @@ h3 {
   background: rgb(255 255 255 / 0.08);
 }
 
+/* ───────── Carrousel d'offres ───────── */
+
+.carousel {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.carousel-viewport {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Cache la barre de défilement — la navigation passe par les boutons et
+     points ci-dessous, le scroll tactile/molette reste utilisable. */
+  scrollbar-width: none;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-viewport {
+    scroll-behavior: auto;
+  }
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.carousel-slide .panel {
+  height: 100%;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.carousel-arrow {
+  --r: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.25);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.carousel-dot:hover {
+  background: rgb(255 255 255 / 0.45);
+}
+
+.carousel-dot[aria-current='true'] {
+  background: var(--ink);
+  transform: scale(1.2);
+}
+
 /* ───────── Connexions ───────── */
 
 .chips {
