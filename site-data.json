@@ -49,7 +49,8 @@
   },
 
   "neron_community": {
-    "rythme_maintenance": null
+    "rythme_maintenance": null,
+    "commande_installation": null
   },
 
   "neron_box": {
@@ -110,7 +111,8 @@
       "juridiction_competente": "Juridiction compétente en cas de litige. cgu.html."
     },
     "neron_community": {
-      "rythme_maintenance": "Rythme réel des mises à jour / correctifs de sécurité de la version v2.0 figée. community.html."
+      "rythme_maintenance": "Rythme réel des mises à jour / correctifs de sécurité de la version v2.0 figée. community.html.",
+      "commande_installation": "Commande d'installation en une ligne (ex. curl -fsSL https://.../install.sh | bash), pointant vers l'emplacement de téléchargement choisi. community.html."
     },
     "neron_box": {
       "caracteristiques_materielles": "Caractéristiques matérielles connues de la Box. box.html.",
