@@ -50,7 +50,7 @@
 
   "neron_community": {
     "rythme_maintenance": null,
-    "commande_installation": null
+    "commande_installation": "curl -fsSL https://raw.githubusercontent.com/enabeteleazar/neronCommunity/main/install.sh | bash"
   },
 
   "neron_box": {
