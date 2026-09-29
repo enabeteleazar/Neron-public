@@ -8,11 +8,13 @@ sans rien casser.
 
 ## Comment ça marche
 
-Le fichier est importé par `js/config.js` au moment du build (Vite). Chaque
-page HTML porte des éléments `<span data-field="chemin.vers.champ">` ; au
-chargement, `js/nav.js` remplace leur texte par la valeur correspondante dans
-`site-data.json` si elle est renseignée (sinon il laisse le placeholder tel
-quel).
+Le fichier est importé par `lib/site-data.ts`, lui-même utilisé par
+`lib/config.ts` et par les pages (`app/**/page.tsx`). Chaque page affiche un
+composant `<Placeholder value={...} fallback="[À CONFIRMER]" />` : s'il
+reçoit une valeur non vide, il l'affiche ; sinon il affiche le texte de
+repli stylé. Comme le rendu se fait côté serveur (App Router), aucun
+JavaScript n'est nécessaire côté visiteur pour que les valeurs apparaissent
+— il faut seulement reconstruire le site (`pnpm build`) après modification.
 
 ## Mettre à jour le site
 
@@ -20,17 +22,17 @@ quel).
    champs, seulement aux valeurs).
 2. Pour vérifier en local avant de publier :
    ```bash
-   pnpm build && pnpm preview
+   pnpm build && pnpm start
    ```
 3. Committez et poussez sur GitHub (branche `develop` ou une PR) : Vercel
    reconstruit le site automatiquement avec les nouvelles valeurs.
 
 ## Cas particulier : le contact affiché sans JavaScript
 
-Le message affiché sur `box.html` quand JavaScript est désactivé (dans
-`<noscript>`) ne peut pas être rempli automatiquement par ce mécanisme,
-puisqu'il n'est visible que lorsque JavaScript ne s'exécute pas. Ce seul
-placeholder doit être édité directement dans `box.html`.
+Le message affiché sur `/box` quand JavaScript est désactivé (dans
+`<noscript>`) ne peut pas être rempli automatiquement par ce mécanisme, pour
+une autre raison que sur l'ancienne version du site : ce texte est fixe
+dans `app/box/page.tsx`. Il doit être édité directement dans ce fichier.
 
 ## Champs spéciaux
 
@@ -38,7 +40,7 @@ placeholder doit être édité directement dans `box.html`.
   `"bientot"` (exactement ces deux valeurs) — pilote automatiquement le
   badge de statut et le bouton d'inscription sur tout le site.
 - `domaines.site_vitrine` / `domaines.app` : changent les liens
-  canoniques, `og:url`, et le bouton « Se connecter » partout sur le site.
+  canoniques et le bouton « Se connecter » partout sur le site.
 - `liste_attente.endpoint` : URL technique de l'API — nécessite aussi de
-  mettre à jour `vercel.json` (`form-action`, `connect-src`), voir
-  `docs/liste-attente.md`.
+  mettre à jour `next.config.js` (`form-action`, `connect-src` dans la CSP),
+  voir `docs/liste-attente.md`.

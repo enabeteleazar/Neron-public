@@ -1,8 +1,8 @@
 # Contrat API — liste d'attente Néron Box
 
-Le formulaire de `box.html` (logique dans `js/waitlist.js`) envoie une requête
-`POST` en JSON vers l'endpoint défini dans `js/config.js`
-(`NERON_CONFIG.waitlist.endpoint`).
+Le formulaire de `/box` (composant `components/WaitlistForm.tsx`) envoie une
+requête `POST` en JSON vers l'endpoint défini dans `site-data.json`
+(`liste_attente.endpoint`).
 
 **Cet endpoint n'existe pas encore.** Tant que `waitlist.endpoint` vaut `null`
 dans la config, le formulaire reste fonctionnel côté interface (validation,
@@ -62,10 +62,10 @@ ou les cookies.
 ## À faire côté backend (NABET)
 
 - Choisir et documenter l'endpoint réel, puis renseigner
-  `NERON_CONFIG.waitlist.endpoint` dans `js/config.js`.
-- Mettre à jour `vercel.json` (`Content-Security-Policy`, directives
+  `liste_attente.endpoint` dans `site-data.json`.
+- Mettre à jour `next.config.js` (`Content-Security-Policy`, directives
   `form-action` **et** `connect-src`) pour inclure le domaine de cet
   endpoint — sans cela, le navigateur bloquera à la fois la soumission
-  de secours sans JS et l'appel `fetch()` de `js/waitlist.js`.
+  de secours sans JS et l'appel `fetch()` de `WaitlistForm.tsx`.
 - Définir la politique de rétention et de désinscription des emails
-  collectés, à refléter dans `confidentialite.html`.
+  collectés, à refléter dans `app/confidentialite/page.tsx`.
