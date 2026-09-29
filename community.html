@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Néron Community : assistant IA 100% local et open source (licence MIT), installable en une commande. Génération précédente de Néron, en maintenance limitée.">
+  <meta name="description" content="Néron Community : assistant IA 100% local, installable en une commande. Génération précédente de Néron, en maintenance limitée.">
   <meta name="theme-color" content="#F7F6F3">
   <link rel="canonical" href="https://neronos.fr/community.html">
   <meta property="og:title" content="Néron Community — neronOS">
-  <meta property="og:description" content="100% local, open source, installable en une commande. Aucune donnée n'est envoyée à la société.">
+  <meta property="og:description" content="100% local, installable en une commande. Aucune donnée n'est envoyée à la société.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://neronos.fr/community.html">
   <meta name="twitter:card" content="summary">
@@ -27,16 +27,15 @@
 <div class="page-hero">
   <span class="page-eyebrow">// néron community</span>
   <span class="badge-status" data-status-for="community"></span>
-  <h1 class="page-title">100&nbsp;% local. Open source. Une commande.</h1>
+  <h1 class="page-title">100&nbsp;% local. Chez vous. Une commande.</h1>
   <p class="page-lead">
-    Néron Community est la version gratuite et open source de Néron : elle tourne entièrement
-    sur votre machine, sous licence MIT. C'est la génération précédente de Néron — le
+    Néron Community est la version gratuite de Néron : elle tourne entièrement
+    sur votre machine. C'est la génération précédente de Néron — le
     développement actif se poursuit ailleurs. <span data-community-maintenance>Les mises
     à jour de cette version sont donc moins fréquentes.</span>
   </p>
   <div class="hero-actions">
     <a href="#install" class="btn-primary">Installer Néron Community</a>
-    <a href="#" class="btn-secondary" data-github-repo target="_blank" rel="noopener noreferrer">Voir le dépôt →</a>
   </div>
 </div>
 
@@ -96,13 +95,6 @@
         <h2 class="section-title" id="install-title">Prêt en une commande.</h2>
         <p class="section-desc">
           Un script bootstrap s'occupe de tout — dépendances, Ollama, modèle, service systemd.
-          Cette commande installe la version <strong>v2.0.0</strong> de Néron, celle que décrit
-          cette page.
-        </p>
-        <p class="section-desc mt-1">
-          <a href="#" data-github-install-script target="_blank" rel="noopener noreferrer">
-            Lire le script d'installation avant de l'exécuter →
-          </a>
         </p>
         <ol class="install-steps" aria-label="Étapes d'installation">
           <li class="install-step">
@@ -135,13 +127,13 @@
           <div class="dot dot-g"></div>
           <span class="terminal-title">bash</span>
         </div>
-        <pre class="terminal-body"><code><span class="t-comment"># Installation one-liner (tag v2.0.0)</span>
-<span class="t-prompt">$</span> <span class="t-cmd">curl -fsSL https://raw.githubusercontent.com/enabeteleazar/Neron_AI/v2.0.0/install.sh | bash</span>
+        <pre class="terminal-body"><code><span class="t-comment"># Installation one-liner</span>
+<span class="t-prompt">$</span> <span class="t-cmd placeholder" data-field="neron_community.commande_installation">curl -fsSL [À CONFIRMER : URL d'installation] | bash</span>
 
 <span class="t-success">✔</span> <span class="t-cmd">RAM : 3816MB OK</span>
 <span class="t-success">✔</span> <span class="t-cmd">Dépendances OK</span>
 <span class="t-success">✔</span> <span class="t-cmd">Ollama installé</span>
-<span class="t-success">✔</span> <span class="t-cmd">Dépôt cloné → /etc/neron</span>
+<span class="t-success">✔</span> <span class="t-cmd">Fichiers installés → /etc/neron</span>
 <span class="t-success">✔</span> <span class="t-cmd">Venv Python OK</span>
 <span class="t-success">✔</span> <span class="t-cmd">Service systemd activé</span>
 <span class="t-info">📥</span> <span class="t-cmd">Téléchargement llama3.2:3b...</span>
@@ -319,21 +311,14 @@
   </div>
 </section>
 
-<!-- SOURCE -->
-<section id="source" aria-labelledby="source-title">
+<!-- MAINTENANCE -->
+<section id="maintenance" aria-labelledby="maintenance-title">
   <div class="container legal-content">
-    <span class="section-label">// code source</span>
-    <h2 class="section-title" id="source-title">Un projet qui continue d'évoluer.</h2>
+    <span class="section-label">// maintenance</span>
+    <h2 class="section-title" id="maintenance-title">Un projet qui continue d'évoluer.</h2>
     <p>
-      Le dépôt public <code>enabeteleazar/Neron_AI</code> a beaucoup évolué depuis cette
-      version&nbsp;: son développement actif se poursuit avec une architecture différente.
-      Néron Community installe précisément le tag <code>v2.0.0</code> de ce dépôt — figé, pour
-      rester prévisible.
+      Néron Community correspond à une version figée de Néron, pour rester prévisible.
     </p>
-    <ul>
-      <li><a href="#" data-github-community-tag target="_blank" rel="noopener noreferrer">Parcourir le code de la version v2.0.0 →</a></li>
-      <li><a href="#" data-github-repo target="_blank" rel="noopener noreferrer">Voir le dépôt et son développement actuel →</a></li>
-    </ul>
     <p><span class="placeholder" data-field="neron_community.rythme_maintenance">[À CONFIRMER : rythme de maintenance et de correctifs de sécurité pour Néron Community]</span></p>
   </div>
 </section>

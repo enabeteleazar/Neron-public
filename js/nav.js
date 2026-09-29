@@ -101,7 +101,6 @@ import cfg from './config.js';
       { label: cfg.products.online.name, href: cfg.products.online.page },
       { label: cfg.products.community.name, href: cfg.products.community.page },
       { label: cfg.products.box.name, href: cfg.products.box.page },
-      { label: 'Code source', href: cfg.github.repoUrl, external: true },
     ].concat(cfg.legal);
 
     const ul = el('ul', { class: 'footer-links', role: 'list' });
@@ -147,22 +146,6 @@ import cfg from './config.js';
 
     document.querySelectorAll('[data-app-signup]').forEach((node) => {
       node.setAttribute('href', cfg.app.domain + cfg.app.signupPath);
-    });
-
-    document.querySelectorAll('[data-github-repo]').forEach((node) => {
-      node.setAttribute('href', cfg.github.repoUrl);
-    });
-
-    document.querySelectorAll('[data-github-install-script]').forEach((node) => {
-      node.setAttribute('href', cfg.github.installScriptUrl);
-    });
-
-    document.querySelectorAll('[data-github-community-tag]').forEach((node) => {
-      node.setAttribute('href', cfg.github.communityTagUrl);
-    });
-
-    document.querySelectorAll('[data-install-command]').forEach((node) => {
-      node.textContent = cfg.github.installCommand;
     });
 
     document.querySelectorAll('[data-community-maintenance]').forEach((node) => {
